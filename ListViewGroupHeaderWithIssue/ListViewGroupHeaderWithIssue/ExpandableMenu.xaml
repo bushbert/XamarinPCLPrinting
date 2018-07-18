@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Padding="0,40,0,0"
+             Icon ="Hamburger.png"
+             Title="Syncpad Menu"
+             x:Class="FormsAnywhere.Client.Views.ExpandableMenu"
+             >
+    <ContentPage.Content>
+
+        
+        
+
+        <ListView  x:Name="GroupedView"
+
+                   GroupDisplayBinding="{Binding title}"
+
+                   RowHeight="75"
+
+                   GroupShortNameBinding="{Binding ShortName}"
+
+                   IsGroupingEnabled="true"
+                   
+                   SeparatorVisibility="None"
+                   
+                   BackgroundColor="Black"
+                   
+
+                   
+                   >
+            
+
+           
+
+            <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                    <ImageCell Text="{Binding FullName}"
+
+                        Tapped="Cell_OnTapped"
+
+                               DetailColor="White"
+
+                               Detail="Created On 1/1/201811"
+
+                               ImageSource="{Binding Icon}"
+                               
+                               Height="75"
+
+                               TextColor="White"
+                               
+                               
+                               
+                               />
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+            <ListView.GroupHeaderTemplate>
+
+                <DataTemplate>
+
+                    <ViewCell>
+
+                        <Grid Padding="20" BackgroundColor="Black" Margin="0,-1,0,-1">
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="70*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Image="{Binding StateIcon}"
+                                     
+                                    FontSize="20"
+
+                                    BackgroundColor="Black"
+
+                                    BorderColor="Black"
+
+                                    Clicked="HeaderTapped" 
+
+                                    CommandParameter="{Binding .}"/>
+
+                            <Label Grid.Column="1" TextColor="White" FontSize="26" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" BackgroundColor="Black" Text="{Binding title}"/>
+                        </Grid>
+
+                    </ViewCell>
+
+                        <!--<TextCell x:Name="b" Text="{Binding title}" TextColor="White" Tapped="HeaderTapped"/>-->
+
+                            <!---->
+
+                            
+
+                        
+
+                    
+
+                </DataTemplate>
+
+            </ListView.GroupHeaderTemplate>
+            
+
+
+        </ListView>
+        
+        
+    
+    </ContentPage.Content>
+</ContentPage>
