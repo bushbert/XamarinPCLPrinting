@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PCLPrintExample"
+             x:Class="PCLPrintExample.MainPage">
+
+    <StackLayout>
+        <Image x:Name="PrintableContent" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="androidprintinghero.jpg" />
+        <Button x:Name="btnPrint" Clicked="btnPrint_Clicked" Text="Lets Print"/>
+    </StackLayout>
+
+</ContentPage>
