@@ -20,7 +20,7 @@ namespace PCLPrintExample.Droid
         void IPrint.Print(byte[] content)
         {
             //Android print code goes here
-            Stream inputStream = new MemoryStream(formData);
+            Stream inputStream = new MemoryStream(content);
             string fileName = "form.pdf";
             if (inputStream.CanSeek)
                 //Reset the position of PDF document stream to be printed
